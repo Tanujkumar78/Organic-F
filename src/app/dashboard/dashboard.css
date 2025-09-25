@@ -1,0 +1,62 @@
+
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 40px;
+  background: #2e7d32; /* Organic green */
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-left .logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-center a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-center a:hover,
+.nav-center .active {
+  color: #ffeb3b; /* highlight color */
+}
+
+.nav-right a {
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.cart-btn {
+  background: #388e3c;
+  color: white;
+}
+
+.cart-btn:hover {
+  background: #43a047;
+}
+
+.Profile-btn {
+  background: white;
+  color: #2e7d32;
+}
+
+.Profile-btn:hover {
+  background: #c8e6c9;
+}

@@ -1,0 +1,32 @@
+.auth-container {
+  width: 300px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 10px;
+  background: #e8f5e9;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
+.auth-container h2 {
+  color: #2e7d32;
+}
+.auth-container input, select {
+  width: 100%;
+  padding: 8px;
+  margin: 8px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+.auth-container button {
+  width: 100%;
+  padding: 10px;
+  background: #4caf50;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.auth-container button:hover {
+  background: #388e3c;
+}

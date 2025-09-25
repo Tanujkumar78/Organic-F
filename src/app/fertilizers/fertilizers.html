@@ -1,0 +1,43 @@
+<div >
+  <div *ngFor="let item of fertilizerData$" class="fertilizer-card">
+    
+    <div class="card-left">
+      <img [src]="item.image_url" alt="{{ item.product_name }}" />
+    </div>
+
+    <div class="card-right">
+      <h2>{{ item.product_name }}</h2>
+      <p class="price">{{ item.price_per_kg }}/Kg</p>
+
+      <table>
+        <tr>
+          <td><strong>Packaging Size:</strong></td>
+          <td>{{ item.packaging_size }}</td>
+        </tr>
+        <tr>
+          <td><strong>Packaging Type:</strong></td>
+          <td>{{ item.packaging_type }}</td>
+        </tr>
+        <tr>
+          <td><strong>Form:</strong></td>
+          <td>{{ item.form }}</td>
+        </tr>
+        <tr>
+          <td><strong>Target Crops:</strong></td>
+          <td>{{ item.target_crops }}</td>
+        </tr>
+        <tr>
+          <td><strong>Pack Type:</strong></td>
+          <td>{{ item.pack_type }}</td>
+        </tr>
+        <tr>
+          <td><strong>Usage/Application:</strong></td>
+          <td>{{ item.usage_application.stage }} - {{ item.usage_application.instructions }}</td>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+<h1>dddddddsdddj</h1>

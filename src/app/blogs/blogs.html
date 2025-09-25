@@ -1,0 +1,14 @@
+<section class="blog-section">
+  <h2 class="blog-title">Latest Blog Posts</h2>
+
+  <div class="blog-grid">
+    <div class="blog-card" *ngFor="let post of blogPosts">
+      <img [src]="post.imageUrl" alt="{{ post.title }}" class="blog-image" />
+      <div class="blog-content">
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.description }}</p>
+        <a routerLink="/blog-detail">read more</a>
+      </div>
+    </div>
+  </div>
+</section>
