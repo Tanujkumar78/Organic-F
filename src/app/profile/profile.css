@@ -1,0 +1,214 @@
+.profile-container {
+  display: flex;
+  justify-content: center;
+  padding: 2.5rem;
+  background: #fafafa;
+  min-height: 100vh;
+}
+
+.profile-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 0 0 2rem;
+  max-width: 760px;
+  width: 100%;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  overflow: hidden;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.profile-header {
+  margin-bottom: 1.25rem;
+  position: relative;
+}
+
+.banner {
+  height: 140px;
+  background: linear-gradient(135deg, #4a9f5a 0%, #5cb85c 100%);
+}
+
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  margin-top: -40px;
+}
+
+.avatar {
+  width: 96px;
+  height: 96px;
+  background: #4a9f5a;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  font-weight: bold;
+}
+
+.avatar.ring {
+  box-shadow: 0 0 0 6px #fff, 0 8px 30px rgba(0,0,0,0.15);
+}
+
+.name {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #2d4a32;
+  margin-top: 0.75rem;
+}
+
+.role {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.role-badge {
+  display: inline-block;
+  margin-top: 0.5rem;
+  background-color: #f0f8e8;
+  color: #4a9f5a;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.profile-details {
+  text-align: left;
+  margin: 1.25rem 1.5rem 0;
+}
+
+.profile-details p {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.profile-details strong {
+  color: #222;
+}
+
+.profile-stats {
+  margin: 1.5rem 1.5rem 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.stat {
+  background: #ffffff;
+  border: 1px solid #f0f0f0;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 30px rgba(0,0,0,0.12);
+}
+
+.stat h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #2d4a32;
+}
+
+.stat p {
+  margin: 0.25rem 0 0;
+  color: #666;
+  font-weight: 600;
+}
+
+.profile-actions {
+  margin: 1.5rem 1.5rem 0;
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.25rem;
+  border-radius: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.btn-primary {
+  background-color: #4a9f5a;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: #2d4a32;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: #f0f8e8;
+  color: #4a9f5a;
+  border-color: #4a9f5a;
+}
+
+.btn-secondary:hover {
+  background-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.btn-logout {
+  background-color: #ffe7e7;
+  color: #c62828;
+  border-color: #ffcdd2;
+}
+
+.btn-logout:hover {
+  background-color: #ffcdd2;
+  color: #b71c1c;
+  transform: translateY(-2px);
+}
+
+/* Back button matches app palette with subtle outline */
+.btn-back {
+  background-color: #ffffff;
+  color: #4a9f5a;
+  border-color: #4a9f5a;
+}
+
+.btn-back:hover {
+  background-color: #f0f8e8;
+  color: #2d4a32;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+  .header-top {
+    padding: 0 1rem;
+    margin-top: -36px;
+  }
+  .avatar {
+    width: 84px;
+    height: 84px;
+    font-size: 2rem;
+  }
+  .profile-details,
+  .profile-stats,
+  .profile-actions {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  .profile-stats {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

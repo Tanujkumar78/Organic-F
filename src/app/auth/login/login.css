@@ -1,7 +1,30 @@
 /* General body and container styling */
-body {
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  position: relative;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  margin: 0;
+  color: #2e4a2f; /* deep leaf green */
+}
+
+:host::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* Professional organic farm rows at sunrise */
+  background-image: url('https://images.unsplash.com/photo-1500937386664-56f3d9cfd4d5?w=1920&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center 40%;
+  filter: brightness(0.85);
+}
+
+:host::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(26,83,25,0.25), rgba(255,255,255,0.55));
 }
 
 .split-container {
@@ -24,13 +47,19 @@ body {
 
 /* Login form container styling */
 .login-container {
-  background: #ffffff;
-  padding: 2.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1; /* above overlays */
   width: 100%;
-  max-width: 400px;
+  max-width: 480px;
+  padding: 2.25rem 2rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 14px 36px rgba(21, 61, 20, 0.28);
   box-sizing: border-box;
+  border: 1px solid rgba(46, 74, 47, 0.14);
+  /* subtle top accent echoing organic brand tone */
+  border-top: 5px solid #2f8f2f;
 }
 
 /* Right Section (Aesthetic Side with Background) */
@@ -78,3 +107,82 @@ body {
 }
 
 /* The rest of your form, input, and button styles can be kept as they are. */
+/* Organ-themed inner elements for existing HTML */
+.login-container h2 {
+  margin: 0 0 1rem 0;
+  color: #1a5319;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  text-align: center;
+}
+
+.login-container form {
+  display: grid;
+  gap: 1rem;
+}
+
+.login-container input[type="email"],
+.login-container input[type="password"] {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(26, 83, 25, 0.25);
+  background: #ffffff;
+  outline: none;
+  color: #2e4a2f;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease, transform 0.05s ease;
+  box-shadow: 0 2px 0 rgba(26,83,25,0.06) inset;
+}
+
+.login-container input::placeholder {
+  color: #6b8f71;
+}
+
+.login-container input:focus {
+  border-color: #2f8f2f;
+  box-shadow: 0 0 0 4px rgba(47, 143, 47, 0.15);
+}
+
+.login-container button[type="submit"] {
+  cursor: pointer;
+  border: none;
+  padding: 0.9rem 1rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #2f8f2f, #1a5319);
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  transition: transform 0.05s ease, box-shadow 0.2s ease, filter 0.2s ease;
+  box-shadow: 0 12px 20px rgba(26, 83, 25, 0.28);
+}
+
+.login-container button[type="submit"]:hover {
+  filter: brightness(1.05);
+  box-shadow: 0 12px 22px rgba(26, 83, 25, 0.3);
+}
+
+.login-container button[type="submit"]:active {
+  transform: translateY(1px);
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+  .login-container {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+}
+
+
+.m {
+  margin-top: 15px;
+  font-size: 14px;
+ 
+}
+
+.n {
+  color: #007bff;
+  cursor: pointer;
+}
+
+.n:hover { text-decoration: underline; }

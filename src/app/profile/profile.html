@@ -1,0 +1,47 @@
+<!-- <p>profile works!</p>
+<h1>{{user|json}}</h1> -->
+  
+
+<div class="profile-container">
+  <div class="profile-card">
+    <div class="profile-header">
+      <div class="banner"></div>
+      <div class="header-top">
+        <a class="btn btn-back" href="javascript:history.back()" title="Go back">Back</a>
+        <div class="avatar ring">
+          {{ user.fullName ? user.fullName.charAt(0) : '?' }}
+        </div>
+        <a class="btn btn-logout" routerLink="/login" title="Logout">Logout</a>
+      </div>
+      <h2 class="name">{{ user.fullName || 'Guest User' }}</h2>
+      <p class="role-badge">{{ user.role || 'No Role Assigned' }}</p>
+    </div>
+
+    <div class="profile-details">
+      <p><strong>Email:</strong> {{ user.email || 'Not Available' }}</p>
+      <p><strong>Phone:</strong> {{ user.phone || 'Not Provided' }}</p>
+      <p><strong>Address:</strong> {{ user.address || 'Not Provided' }}</p>
+      <p><strong>Joined On:</strong> {{ user.joinedDate || 'N/A' }}</p>
+    </div>
+
+    <div class="profile-stats">
+      <div class="stat">
+        <h3>0</h3>
+        <p>Posts</p>
+      </div>
+      <div class="stat">
+        <h3>0</h3>
+        <p>Followers</p>
+      </div>
+      <div class="stat">
+        <h3>0</h3>
+        <p>Following</p>
+      </div>
+    </div>
+
+    <div class="profile-actions">
+      <a class="btn btn-primary" href="#" title="Edit profile">Edit Profile</a>
+      <!-- <a class="btn btn-secondary" href="#" title="Settings">Settings</a> -->
+    </div>
+  </div>
+</div>

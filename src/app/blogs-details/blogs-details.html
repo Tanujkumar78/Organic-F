@@ -1,19 +1,30 @@
-<section class="blog-details">
-  <h2 class="main-title">5 Natural Ways to Improve Soil Fertility</h2>
+<div class="list-header">
+    <a class="btn btn-back" routerLink="/blog" title="Go to Home">Back to Home</a>
+  </div>
 
-  <div class="section" *ngFor="let section of contentSections">
+
+
+
+<section class="blog-details">
+  <h2 class="main-title">{{blogTitle}}</h2>
+
+  <div class="section" *ngFor="let section of blogDetails$" >
     <h3>{{ section.sectionTitle }}</h3>
     <p>{{ section.text }}</p>
+    <img [src]="domSanitization.bypassSecurityTrustUrl(section?.imageUrl)" [alt]=" section.sectionTitle "
+      class="section-img" />
+    <!-- <div class="video-wrapper" *ngIf="section.videoUrl">
+      <video *ngIf="section.videoUrl" controls class="section-video">
+        <source [src]="domSanitization.bypassSecurityTrustResourceUrl(section.videoUrl)" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video> 
 
-    <!-- Image -->
-    <img [src]="section.imageUrl" alt="{{ section.sectionTitle }}" class="section-img" />
-    <h1>good</h1>
+      <p>{{section.vidio}}</p>
+    </div> -->
 
-    <!-- Video (only if available) -->
-    <div class="video-wrapper" *ngIf="section.videoUrl">
-      <iframe [src]="section.videoUrl" frameborder="0" allowfullscreen></iframe>
-    </div>
+    <p><span class="mmm">What it is: </span>{{section.Whatitis}}</p>
+    <p><span class="mmm">Purpose: </span>{{section.Purpose}}</p>
+    <p><span class="mmm">How it helps: </span>{{section.Howithelpsfarmers}}</p>
+
   </div>
 </section>
-
-<h1>dfghj</h1>  

@@ -4,26 +4,225 @@
   </div>
 
   <div class="nav-center">
-    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
-    <!-- <a routerLink="/products" routerLinkActive="active">Products</a> -->
-    <a routerLink="/about" routerLinkActive="active">About Us</a>
+    <a routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
     <a routerLink="/blog" routerLinkActive="active">Blog</a>
-    <a routerLink="/contact" routerLinkActive="active">Contact</a>
     <a routerLink="/Fertilizers" routerLinkActive="active">Fertilizers</a>
     <a routerLink="/Pesticides" routerLinkActive="active">Pesticides</a>
   </div>
 
   <div class="nav-right">
     <a routerLink="/cart" class="cart-btn">🛒 Cart</a>
-    <!-- <a routerLink="/Profile" class="Profile-btn">Profile</a> -->
-  </div>
+    <a routerLink="/Profile" class="cart-btn">Profile</a>
+     <!-- <img routerLink="/Profile" class="prof" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxHkRrNGqehAJNFLGzdJ_a6f6vvmsk8RAoIQ&s">-->
+  </div> 
 </nav>
 
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-badge">
+        <span class="badge-icon">🌱</span>
+        <span>100% ORGANIC & SUSTAINABLE</span>
+      </div>
+      <h1 class="hero-title">
+        Nurture Your Farm, <br>
+        <span class="highlight">Naturally</span>
+      </h1>
+      
+      <p class="hero-description">
+        Transform your agricultural dreams into reality with our premium organic fertilizers and natural pesticides. 
+        Sustainable farming solutions for healthier crops and a greener future.
+      </p>
+      
+      <div class="hero-buttons">
+        <button class="btn-primary" routerLink="/Fertilizers">Shop Now</button>
+        <button class="btn-secondary" routerLink="/about">Learn More</button>
+      </div>
+      
+      <div class="hero-features">
+        <div class="feature">
+          <div class="feature-icon">🌱</div>
+          <span>100% Organic</span>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🛡️</div>
+          <span>Eco-Friendly</span>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🌿</div>
+          <span>Sustainable</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="hero-right">
+      <div class="stats-card">
+        <div class="stat">
+          <h3>{{ stats.happyFarmers }}</h3>
+          <p>Happy Farmers</p>
+        </div>
+        <div class="stat">
+          <h3>{{ stats.products }}</h3>
+          <p>Products</p>
+        </div>
+        <div class="stat">
+          <h3>{{ stats.successRate }}</h3>
+          <p>Success Rate</p>
+        </div>
+        <div class="stat">
+          <h3>{{ stats.support }}</h3>
+          <p>Support</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- Knowledge Hub Section -->
+<section class="knowledge-hub">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">
+        <span class="badge-icon">📚</span>
+        <span>LATEST INSIGHTS</span>
+      </div>
+      <h2>Farming Knowledge Hub</h2>
+      <p>Stay updated with the latest organic farming techniques, tips, and insights from our team of agricultural experts.</p>
+    </div>
+    
+    <div class="articles-grid">
+      <div class="article-card" *ngFor="let article of articles">
+        <div class="article-image">
+          <img [src]="article.image" [alt]="article.title">
+          <div class="article-category">{{ article.category }}</div>
+        </div>
+        <div class="article-content">
+          <div class="article-meta">
+            <span>{{ article.date }}</span>
+            <span>{{ article.readTime }}</span>
+          </div>
+          <h3>{{ article.title }}</h3>
+          <p>{{ article.description }}</p>
+          <!-- <a href="#" class="read-more">Read More →</a> -->
+           <a class="read-more">Read More →</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="view-all">
+      <button class="btn-outline">View All Articles →</button>
+    </div>
+  </div>
+</section>
 
+<!-- Benefits Section -->
+<section class="benefits">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">
+        <span class="badge-icon">🌟</span>
+        <span>WHY CHOOSE ORGANIC</span>
+      </div>
+      <h2>Benefits of Organic Farming</h2>
+      <p>Discover the transformative power of organic farming solutions that benefit your crops, your community, and our planet.</p>
+    </div>
+    
+    <div class="benefits-grid">
+      <div class="benefit-card" *ngFor="let benefit of benefits">
+        <div class="benefit-icon">{{ benefit.icon }}</div>
+        <h3>{{ benefit.title }}</h3>
+        <p>{{ benefit.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- Global Results Section -->
+<section class="global-results">
+  <div class="container">
+    <h2>Proven Results Across the Globe</h2>
+    <p>Our organic solutions have helped farmers worldwide achieve remarkable results</p>
+    
+    <div class="results-grid">
+      <div class="result-item">
+        <h3>{{ globalResults.farmersServed }}</h3>
+        <p>Farmers Served</p>
+      </div>
+      <div class="result-item">
+        <h3>{{ globalResults.yieldIncrease }}</h3>
+        <p>Yield Increase</p>
+      </div>
+      <div class="result-item">
+        <h3>{{ globalResults.organicCertified }}</h3>
+        <p>Organic Certified</p>
+      </div>
+      <div class="result-item">
+        <h3>{{ globalResults.countries }}</h3>
+        <p>Countries</p>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- Products Section -->
+<section class="products">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">
+        <span class="badge-icon">🌿</span>
+        <span>OUR PRODUCTS</span>
+      </div>
+      <h2>Premium Organic Solutions</h2>
+      <p>Discover our comprehensive range of organic fertilizers and natural pesticides, carefully crafted to enhance your crop yield while protecting the environment.</p>
+    </div>
+    
+    <div class="products-grid">
+      <div class="product-category">
+        <div class="product-image">
+          <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&h=300&fit=crop" alt="Organic Fertilizers">
+        </div>
+        <div class="product-content">
+          <div class="product-badge">🌱 Organic Fertilizers</div>
+          <h3>Nutrient-rich organic fertilizers that improve soil health and boost crop productivity naturally.</h3>
+          <ul>
+            <li>100% Natural ingredients</li>
+            <li>Improves soil structure</li>
+            <li>Long-lasting nutrition</li>
+            <li>Safe for environment</li>
+          </ul>
+          <button class="btn-primary" routerLink="/Fertilizers">View Fertilizers →</button>
+        </div>
+      </div>
+      
+      <div class="product-category">
+        <div class="product-image">
+          <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=400&h=300&fit=crop" alt="Natural Pesticides">
+        </div>
+        <div class="product-content">
+          <div class="product-badge">🛡️ Natural Pesticides</div>
+          <h3>Effective natural pest control solutions that protect your crops without harmful chemicals.</h3>
+          <ul>
+            <li>Plant-based formulas</li>
+            <li>Safe for beneficial insects</li>
+            <li>Biodegradable solutions</li>
+            <li>No harmful residues</li>
+          </ul>
+          <button class="btn-primary" routerLink="/Pesticides">View Pesticides →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-
-
-
+<!-- Call to Action -->
+<section class="cta">
+  <div class="container">
+    <h2>Ready to Transform Your Farm?</h2>
+    <p>Join thousands of farmers who have already made the switch to organic, sustainable farming practices with our premium products.</p>
+    <div class="cta-buttons">
+      <button class="btn-primary">Shop All Products</button>
+      <button class="btn-secondary" routerLink="/blog">Get Started</button>
+    </div>
+  </div>
+</section>

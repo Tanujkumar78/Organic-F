@@ -1,6 +1,31 @@
-<div >
-  <div *ngFor="let item of fertilizerData$" class="fertilizer-card">
-    
+<div class="fertilizers-container">
+
+
+    <!-- Back Button below search bar -->
+  <div class="list-header">
+    <a class="btn btn-back" routerLink="/dashboard" title="Go to Home">Back to Home</a>
+  </div>
+  
+  <!-- Search Bar at Top Center -->
+  <div class="search-header">
+    <input
+      type="text"
+      [(ngModel)]="searchText"
+      (input)="onSearch()"
+      placeholder="Search fertilizers..."
+      class="search-bar"
+    />
+  </div>
+
+
+
+  <!-- No results -->
+  <div *ngIf="filteredUsers.length === 0" class="no-results">
+    <img class="error-img" src="https://thumbs.dreamstime.com/b/funny-error-concept-web-page-not-found-sign-internet-problem-icon-214601997.jpg" alt="No Results" />
+  </div>
+
+  <!-- Fertilizer Cards -->
+  <div *ngFor="let item of filteredUsers" class="fertilizer-card">
     <div class="card-left">
       <img [src]="item.image_url" alt="{{ item.product_name }}" />
     </div>
@@ -35,9 +60,9 @@
           <td>{{ item.usage_application.stage }} - {{ item.usage_application.instructions }}</td>
         </tr>
       </table>
+      <div>
+        <button class="add-to-cart-btn" (click)="addToCart(item)">Add to Cart</button>
+      </div>
     </div>
-
   </div>
 </div>
-
-<h1>dddddddsdddj</h1>

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
@@ -6,10 +6,10 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:3000/auth';
+   private apiUrl = 'http://localhost:3000/auth';
   
+ private http = inject(HttpClient);
 
-  constructor(private http: HttpClient) {}
 
   signup(data: any): Observable<any> {
     return this.http.post(`${this.apiUrl}/signup`, data);
