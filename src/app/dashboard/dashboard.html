@@ -8,10 +8,12 @@
     <a routerLink="/blog" routerLinkActive="active">Blog</a>
     <a routerLink="/Fertilizers" routerLinkActive="active">Fertilizers</a>
     <a routerLink="/Pesticides" routerLinkActive="active">Pesticides</a>
+    
+    <!-- <a routerLink="/favorites" routerLinkActive="active">Favorites</a> -->
   </div>
 
   <div class="nav-right">
-    <a routerLink="/cart" class="cart-btn">🛒 Cart</a>
+    <a routerLink="/favorites" routerLinkActive="active" class="cart-btn">🛒 Cart</a>
     <a routerLink="/Profile" class="cart-btn">Profile</a>
      <!-- <img routerLink="/Profile" class="prof" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxHkRrNGqehAJNFLGzdJ_a6f6vvmsk8RAoIQ&s">-->
   </div> 
@@ -226,3 +228,22 @@
     </div>
   </div>
 </section>
+
+
+
+<h2>Template Driven Form</h2>
+
+<form #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)">
+  <label>Name:</label>
+  <input type="text" name="name" ngModel required /><br /><br />
+
+  <label>Email:</label>
+  <input type="email" name="email" ngModel required /><br /><br />
+
+  <label>Password:</label>
+  <input type="password" name="password" ngModel /><br /><br />
+
+  <button type="submit" [disabled]="userForm.invalid">Submit</button>
+</form>
+
+<p>Form Value: {{ userForm.value | json }}</p>

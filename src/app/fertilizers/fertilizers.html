@@ -1,12 +1,11 @@
 <div class="fertilizers-container">
 
-
-    <!-- Back Button below search bar -->
+  <!-- Back Button -->
   <div class="list-header">
     <a class="btn btn-back" routerLink="/dashboard" title="Go to Home">Back to Home</a>
   </div>
-  
-  <!-- Search Bar at Top Center -->
+
+  <!-- Search Bar -->
   <div class="search-header">
     <input
       type="text"
@@ -17,11 +16,11 @@
     />
   </div>
 
-
-
-  <!-- No results -->
+  <!-- No Results -->
   <div *ngIf="filteredUsers.length === 0" class="no-results">
-    <img class="error-img" src="https://thumbs.dreamstime.com/b/funny-error-concept-web-page-not-found-sign-internet-problem-icon-214601997.jpg" alt="No Results" />
+    <img class="error-img"
+      src="https://thumbs.dreamstime.com/b/funny-error-concept-web-page-not-found-sign-internet-problem-icon-214601997.jpg"
+      alt="No Results" />
   </div>
 
   <!-- Fertilizer Cards -->
@@ -60,8 +59,11 @@
           <td>{{ item.usage_application.stage }} - {{ item.usage_application.instructions }}</td>
         </tr>
       </table>
-      <div>
-        <button class="add-to-cart-btn" (click)="addToCart(item)">Add to Cart</button>
+
+      <div class="btn-group">
+        <!-- <button class="add-to-cart-btn" (click)="addToCart(item)">Add to Cart</button>
+        <button class="add-to-fav-btn" (click)="addToFavorites(item)">❤️ Add to Favorites</button> -->
+        <button class="add-to-cart-btn" (click)="addToFavorites(item)">Add to Cart</button>
       </div>
     </div>
   </div>

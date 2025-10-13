@@ -1,0 +1,134 @@
+
+/* Global container */
+.favorites-container {
+  font-family: "Poppins", sans-serif;
+  padding: 2rem 4rem;
+  background: linear-gradient(to bottom right, #f7fff9, #e6f5eb);
+  min-height: 100vh;
+}
+
+/* Header section */
+.list-header {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+/* Page title */
+.favorites-container h2 {
+  text-align: center;
+  color: #2f6846;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 3px rgba(100, 100, 100, 0.2);
+}
+
+/* Back Button */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.btn-back {
+  background-color: #ffffff;
+  color: #4a9f5a;
+  border: 2px solid #4a9f5a;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.btn-back:hover {
+  background-color: #4a9f5a;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(74, 159, 90, 0.3);
+}
+
+/* Favorite cards layout */
+.favorite-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border-radius: 16px;
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.favorite-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(74, 159, 90, 0.25);
+}
+
+/* Image section */
+.card-left img {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid #d7ead9;
+}
+
+/* Text & button section */
+.card-right {
+  flex: 1;
+  padding-left: 1.5rem;
+}
+
+.card-right h3 {
+  font-size: 1.3rem;
+  color: #2f6846;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+.price {
+  color: #4a9f5a;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+
+/* Remove button */
+.card-right button {
+  background-color: #ff4b4b;
+  border: none;
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.card-right button:hover {
+  background-color: #e84141;
+  transform: scale(1.05);
+}
+
+/* Empty state message */
+.no-results {
+  text-align: center;
+  margin-top: 3rem;
+  color: #555;
+  font-size: 1.1rem;
+}
+
+.no-results p {
+  background: #f9fff7;
+  border: 2px dashed #c8e6ca;
+  display: inline-block;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+}
+

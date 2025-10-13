@@ -9,5 +9,5 @@ import { RouterModule } from '@angular/router';
   styleUrl: './profile.css'
 })
 export class Profile {
-  user: any = JSON.parse(localStorage.getItem('user') || '{}');
+ user: any = JSON.parse(localStorage.getItem('user') || '{}');
 }

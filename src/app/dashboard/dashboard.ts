@@ -10,6 +10,18 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./dashboard.css']
 })
 export class Dashboard implements OnInit {
+
+
+onSubmit(formData: any) {
+    console.log('Form submitted:', formData);
+    alert(`Welcome ${formData.name}!`);
+  }
+
+
+
+
+
+
   fertilizerData: any[] = [];
   
   // Statistics data similar to the design

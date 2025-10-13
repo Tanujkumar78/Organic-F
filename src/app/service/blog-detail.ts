@@ -20,4 +20,8 @@ export class BlogDetail {
     return this.http.get(`${this.apiUrl}/contentSections?blogId=${id}`);
   }
 
+  getFertilizers(){
+    return this.http.get(`${this.apiUrl}/Fertilizers`);
+  }
+
 }

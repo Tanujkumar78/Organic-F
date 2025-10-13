@@ -138,24 +138,98 @@
   transform: translateY(-2px);
 }
 
-/* Search Bar at Top Center */
-.search-bar {
-  width: 100%;
-  max-width: 400px;
-  padding: 10px 12px;
-  margin: 20px 0;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  outline: none;
-  font-size: 14px;
-  transition: all 0.3s ease;
-  display: block;
+/* Search Header Container */
+.search-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+  background: transparent;
 }
 
-.search-bar:focus {
-  border-color: #4CAF50;
-  box-shadow: 0 0 6px rgba(76, 175, 80, 0.4);
+/* Search Input Container (for styling + animation) */
+.search-bar {
+  width: 60%;
+  max-width: 600px;
+  padding: 0.9rem 1.2rem;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  color: #2f6846;
+  background: #ffffff;
+  border: 2px solid #4a9f5a;
+  border-radius: 50px;
+  outline: none;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  position: relative;
+  z-index: 1;
 }
+
+/* Placeholder text */
+.search-bar::placeholder {
+  color: #7bb48a;
+  letter-spacing: 0.5px;
+}
+
+/* Animation on focus */
+.search-bar:focus {
+  box-shadow: 0 0 15px rgba(74, 159, 90, 0.6);
+  border-color: #2f6846;
+  transform: scale(1.03);
+}
+
+/* Floating Glow Animation */
+.search-bar:focus::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 50px;
+  background: linear-gradient(45deg, #4a9f5a, #89d497, #4a9f5a);
+  animation: borderGlow 2.5s linear infinite;
+  z-index: -1;
+}
+
+/* Keyframes for animated border effect */
+@keyframes borderGlow {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+/* Optional: add a subtle breathing effect */
+@keyframes softPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+/* Hover effect for subtle motion */
+.search-bar:hover {
+  animation: softPulse 2s ease-in-out infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .search-bar {
+    width: 80%;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-bar {
+    width: 90%;
+    font-size: 0.9rem;
+  }
+}
+
+
 
 .search-header {
   width: 100%;

@@ -1,0 +1,23 @@
+<div class="favorites-container">
+  <div class="list-header">
+    <a class="btn btn-back" routerLink="/dashboard" title="Go to Home">Back to Home</a>
+  </div>
+
+  <h2>My OrganicFarm Cart ❤️</h2>
+
+  <div *ngIf="favoriteItems.length === 0" class="no-results">
+    <p>Your 🌱 OrganicFarm Cart is empty</p>
+  </div>
+
+  <div *ngFor="let item of favoriteItems" class="favorite-card">
+    <div class="card-left">
+      <img [src]="item.image_url" alt="{{ item.product_name }}" />
+    </div>
+
+    <div class="card-right">
+      <h3>{{ item.product_name }}</h3>
+      <p class="price">{{ item.price_per_kg }}/Kg</p>
+      <button (click)="removeFromFavorites(item.id)">❌ Remove</button>
+    </div>
+  </div>
+</div>

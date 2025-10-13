@@ -10,6 +10,7 @@ import { BlogsDetails } from './blogs-details/blogs-details';
 import { About } from './about/about';
 import { Profile } from './profile/profile';
 import { Cart } from './cart/cart';
+import { Favorites } from './favorites/favorites';
 
 
 export const routes: Routes = [
@@ -25,6 +26,8 @@ export const routes: Routes = [
    { path: 'blog-detail/:id', component: BlogsDetails },
    {path: 'Profile', component: Profile},
   //  {path: 'Cart', loadChildren: () => import('./cart/cart.module').then(m => m.CartModule) }
-  {path: 'cart', component: Cart}
+  {path: 'cart', component: Cart},
 //   { path: '', redirectTo: 'blogs', pathMatch: 'full' },
+{ path: 'favorites', component: Favorites }
+
 ];
